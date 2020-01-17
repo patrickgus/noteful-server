@@ -22,11 +22,6 @@ const NotesService = {
     return knex("notes")
       .where({ id })
       .delete();
-  },
-  updateNote(knex, id, newNoteFields) {
-    return knex("notes")
-      .where({ id })
-      .update(newNoteFields);
   }
 };
 
