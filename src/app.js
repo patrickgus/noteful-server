@@ -6,7 +6,7 @@ const helmet = require("helmet");
 const { NODE_ENV } = require("./config");
 const errorHandler = require("./error-handler");
 const foldersRouter = require("./folders/folders-router");
-// const notesRouter = require("./notes/notes-router");
+const notesRouter = require("./notes/notes-router");
 
 const app = express();
 
@@ -19,7 +19,7 @@ app.use(helmet());
 app.use(cors());
 
 app.use("/api/folders", foldersRouter);
-// app.use("/api/notes", notesRouter);
+app.use("/api/notes", notesRouter);
 
 app.use(errorHandler);
 
